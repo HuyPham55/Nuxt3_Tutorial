@@ -1,24 +1,18 @@
 <script setup lang="js">
 const {id} = useRoute().params
-
 definePageMeta({
   layout: 'products',
 })
+const uri = "https://fakestoreapi.com/products/" + id
+
+//Telling Nuxt that each fetch is different
+const {data: product} = await useFetch(uri, { key: id })
 
 </script>
 
 <template>
-
-  <h1 class="text-xl">This is products detail for {{ id }}</h1>
   <div>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna
-      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-      sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+    <ProductDetail :product="product"/>
   </div>
 
 </template>
