@@ -35,14 +35,14 @@
     margin-left: 1rem;
     a {
       text-decoration: none;
-      &:hover {
+      &:not(.btn):hover {
         color: #12b488;
       }
     }
   }
 }
 
-.router-link-exact-active {
+.router-link-exact-active:not(.btn) {
   color: #12b488;
 }
 </style>

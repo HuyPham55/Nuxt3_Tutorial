@@ -4,6 +4,17 @@ import ProductCard from "~/components/ProductCard.vue";
 definePageMeta({
   layout: 'products',
 })
+
+useHead({
+  title: 'Nuxt | Products',
+  meta: [
+    {
+      name: 'description',
+      content: 'This is the products page'
+    }
+  ]
+});
+
 const {data: products} = await useFetch('https://fakestoreapi.com/products')
 </script>
 
