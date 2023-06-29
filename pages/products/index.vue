@@ -3,6 +3,7 @@ import ProductCard from "~/components/ProductCard.vue";
 
 definePageMeta({
   layout: 'products',
+  middleware: 'localization'
 })
 
 useHead({
