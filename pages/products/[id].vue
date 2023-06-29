@@ -16,7 +16,7 @@ if (!product.value) {
 <template>
   <div>
     <Head>
-      <Title>Nuxt | {{product.title}}</Title>
+      <Title>Nuxt | {{product.title}} - {{$route.params.id}}</Title>
       <Meta name="description" :content="product.description"></Meta>
     </Head>
     <ProductDetail :product="product"/>
